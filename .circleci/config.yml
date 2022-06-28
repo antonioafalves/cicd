@@ -3,7 +3,8 @@ jobs:
     macos:
       xcode: 12.5.1
 
-    steps:
-      # Commands will execute in macOS container
-      # with Xcode 12.5.1 installed
-      - run: xcodebuild -version
+steps:
+  - macos/preboot-simulator:
+      version: "15.0"
+      platform: "iOS"
+      device: "iPhone 13 Pro Max"
